@@ -9,7 +9,7 @@
 /**
  * Database config variables
  */
-define("DB_HOST", "127.0.0.1");
-define("DB_USER", "root");
+define("DB_HOST", "den1.mysql2.gear.host");
+define("DB_USER", "lawzdb");
 define("DB_PASSWORD", "LAWZ!@#$");
 define("DB_DATABASE", "lawzdb");
