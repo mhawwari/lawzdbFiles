@@ -13,10 +13,10 @@ $db = new DB_User_Functions();
 // json response array
 $response = array("error" => FALSE);
 
-if (isset($_GET['user_id'])) {
+if (isset($_POST['user_id'])) {
 
     // receiving the post params
-    $user_id = $_GET['user_id'];
+    $user_id = $_POST['user_id'];
     // get the user by email and password
     $user = $db->getUserById( $user_id);
 
