@@ -24,14 +24,9 @@ class DB_User_Functions {
     }
 
     /**
-     * @param $fname
-     * @param $lname
      * @param $email
      * @param $password
      * @param $username
-     * @param $phone
-     * @param $longitude
-     * @param $latitude
      * @return bool
      */
     public function addUser($email, $password, $username) {
@@ -107,7 +102,7 @@ class DB_User_Functions {
 
     /**
      * Get user by email and password
-     * returns null when email/password incorrect
+     * returns null when email/password incorrect 
      */
     public function getUserByEmailAndPassword($email, $password) {
 
@@ -121,7 +116,7 @@ class DB_User_Functions {
 
             // verifying user password
             $salt = $user['salt'];
-            $encrypted_password = $user['encrypted_password'];
+            $encrypted_password = $user['password'];
             $hash = $this->checkhashSSHA($salt, $password);
             // check for password equality
             if ($encrypted_password == $hash) {
