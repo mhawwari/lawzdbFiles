@@ -12,7 +12,7 @@ $db = new DB_User_Functions();
 // json response array
 $response = array("error" => FALSE);
 
-if (isset($POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
 
     // receiving the post params
     $username = $_POST["username"];
