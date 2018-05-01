@@ -10,7 +10,7 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
 // json response array
-$a = array();
+$jposts = array();
 
         // get all posts
         $posts = $db->getPosts();
@@ -26,8 +26,8 @@ $a = array();
                 $response["post"]["image"] = $post["image"];
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
-		array_push($a, $response);}
-            echo "Normal: ", json_encode($a);
+		array_push($jposts, $response);}
+            echo json_encode($jposts);
             //}
         } else {
             // no posts exist
