@@ -10,7 +10,7 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
 // json response array
-a = array();
+a = array(" ");
 
         // get all posts
         $posts = $db->getPosts();
