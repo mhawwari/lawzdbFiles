@@ -27,7 +27,7 @@ a = array();
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
 		array_push($a, $response);}
-            echo json_encode($a);
+            echo "Normal: ", json_encode($a);
             //}
         } else {
             // no posts exist
