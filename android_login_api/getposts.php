@@ -14,7 +14,7 @@ $db = new DB_Community_Functions();
         // get all posts
         $posts = $db->getPosts();
         if ($posts) {
-            foreach ($posts as $post) {//code might not work due to json formatting of multiple objects
+            /*foreach ($posts as $post) {//code might not work due to json formatting of multiple objects
 
                 // posts found successfully
                 $response["post"]["post_id"] = $post["post_id"];
@@ -26,7 +26,8 @@ $db = new DB_Community_Functions();
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
 		
-            echo json_encode($response);
+            echo json_encode($response);*/
+		echo json_encode ($posts);
             }
         } else {
             // no posts exist
