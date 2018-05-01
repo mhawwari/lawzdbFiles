@@ -10,11 +10,12 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
 // json response array
+a = array();
 
         // get all posts
         $posts = $db->getPosts();
         if ($posts) {
-            /*foreach ($posts as $post) {//code might not work due to json formatting of multiple objects
+            foreach ($posts as $post) {
 
                 // posts found successfully
                 $response["post"]["post_id"] = $post["post_id"];
@@ -25,10 +26,9 @@ $db = new DB_Community_Functions();
                 $response["post"]["image"] = $post["image"];
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
-		
-            echo json_encode($response);*/
-		echo json_encode ($posts);
-            }
+		array_push($a, $response);}
+            echo json_encode($response);
+            //}
         } else {
             // no posts exist
             $response["error"] = TRUE;
