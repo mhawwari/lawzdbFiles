@@ -10,7 +10,7 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
     // receiving the post params
-    $topic = $_POST['topic'];
+    $topic = $_GET['topic'];
     // json response array
     $jposts = array();
     
