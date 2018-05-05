@@ -93,7 +93,7 @@ class DB_Community_Functions {
      */
     public function getPosts() {
         $posts = array();
-        $stmt = $this->conn->prepare("SELECT * FROM post");
+        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id");
 
         if ($stmt->execute()) {
 		$result = $stmt->get_result();
