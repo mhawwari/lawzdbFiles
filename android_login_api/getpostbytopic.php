@@ -12,8 +12,8 @@ $db = new DB_Community_Functions();
     // receiving the post params
     $topic = $_POST['topic'];
     // json response array
-    $response = array("error" => FALSE);
-
+    $jposts = array();
+    
         // get all posts
         $posts = $db->getPostByTopic($topic);
         if ($posts) {
@@ -28,8 +28,8 @@ $db = new DB_Community_Functions();
                 $response["post"]["topic"] = $post["topic"];
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
-            }
-            echo json_encode($response);
+                array_push($jposts, $response);}
+            echo json_encode($jposts);
         } else {
             // no posts exist
             $response["error"] = TRUE;
