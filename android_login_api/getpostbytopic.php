@@ -26,6 +26,8 @@ $db = new DB_Community_Functions();
                 $response["post"]["content"] = $post["content"];
                 $response["post"]["user_id"] = $post["user_id"];
                 $response["post"]["topic"] = $post["topic"];
+                $response["post"]["first_name"] = $post["first_name"];
+                $response["post"]["last_name"] = $post["last_name"];
                 $response["post"]["create_date"] = $post["create_date"];
                 $response["post"]["modify_date"] = $post["modify_date"];
                 array_push($jposts, $response);}
