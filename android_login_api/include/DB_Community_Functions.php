@@ -134,12 +134,13 @@ class DB_Community_Functions {
      */
     public function getPostByTopic($topic) {
         $posts = array();
-        $stmt = $this->conn->prepare("SELECT * FROM post WHERE topic = ?");
+        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id WHERE topic = ?");
         $stmt->bind_param("s", $topic);
 
         if ($stmt->execute()) {
-            while ($r = $stmt->get_result()->fetch_assoc()){
-                $posts[] = $r;
+		$result = $stmt->get_result();
+            while ($r = mysqli_fetch_assoc($result)){          
+		$posts[] = $r;
             }
             $stmt->close();
             return $posts;
