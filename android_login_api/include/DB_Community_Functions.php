@@ -115,7 +115,7 @@ class DB_Community_Functions {
      */
     public function getPostById($id) {
 
-        $stmt = $this->conn->prepare("SELECT * FROM post WHERE post_id = ?");
+        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id WHERE post_id = ?");
         $stmt->bind_param("s", $id);
 
         if ($stmt->execute()) {
