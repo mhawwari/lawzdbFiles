@@ -26,6 +26,7 @@ $response = array("error" => FALSE);
             $response["post"]["topic"] = $post["topic"];
             $response["post"]["first_name"] = $post["first_name"];
             $response["post"]["last_name"] = $post["last_name"];
+            $response["post"]["image"] = $post["image"];
             $response["post"]["create_date"] = $post["create_date"];
             $response["post"]["modify_date"] = $post["modify_date"];
             echo json_encode($response);
