@@ -13,7 +13,7 @@ $db = new DB_Community_Functions();
 $response = array("error" => FALSE);
 
     // receiving the post params
-    $id = $_POST['id'];
+    $id = $_GET['id'];
 
         // get post
         $post = $db->getPostById($id);
