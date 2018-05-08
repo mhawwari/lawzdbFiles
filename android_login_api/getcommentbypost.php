@@ -11,9 +11,9 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
 // receiving the post params
-$post_id = $_POST['post_id'];
+$post_id = $_GET['post_id'];
 // json response array
-$response = array("error" => FALSE);
+$jcomments = array();
 
 // get all comments of a user
 $comments = $db->getCommentByPost($post_id);
@@ -28,8 +28,11 @@ if ($comments) {
         $response["comment"]["post_id"] = $comment["post_id"];
         $response["comment"]["create_date"] = $comment["create_date"];
         $response["comment"]["modify_date"] = $comment["modify_date"];
+        $response["comment"]["first_name"] = $comment["first_name"];
+        $response["comment"]["last_name"] = $comment["last_name"];
+        array_push($jcomments, $response);
     }
-    echo json_encode($response);
+    echo json_encode($jcomments);
 } else {
     // no posts exist
     $response["error"] = TRUE;
