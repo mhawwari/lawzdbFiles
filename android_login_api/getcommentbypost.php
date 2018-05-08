@@ -11,7 +11,7 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
 // receiving the post params
-$post_id = $_GET['post_id'];
+$post_id = $_POST['post_id'];
 // json response array
 $jcomments = array();
 
