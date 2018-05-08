@@ -30,6 +30,7 @@ if ($comments) {
         $response["comment"]["modify_date"] = $comment["modify_date"];
         $response["comment"]["first_name"] = $comment["first_name"];
         $response["comment"]["last_name"] = $comment["last_name"];
+        $response["comment"]["image"] = $comment["image"];
         array_push($jcomments, $response);
     }
     echo json_encode($jcomments);
