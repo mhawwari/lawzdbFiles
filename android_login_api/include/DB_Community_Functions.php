@@ -259,11 +259,12 @@ class DB_Community_Functions {
      */
     public function getCommentByPost($post_id) {
         $comments = array();
-        $stmt = $this->conn->prepare("SELECT * FROM comment WHERE post_id = ?");
+        $stmt = $this->conn->prepare("SELECT comment.*, user.first_name, user.last_name FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE post_id = ?");
         $stmt->bind_param("s", $post_id);
 
         if ($stmt->execute()) {
-            while ($r = $stmt->get_result()->fetch_assoc()){
+	    $result = $stmt->get_result();
+            while ($r = mysqli_fetch_assoc($result)){
                 $comments[] = $r;
             }
             $stmt->close();
@@ -273,7 +274,7 @@ class DB_Community_Functions {
             return NULL;
         }
     }
-
+	
     /** get a comment by user id
      * @param $userid
      * @return array|null
