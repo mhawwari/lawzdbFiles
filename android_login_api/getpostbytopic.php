@@ -18,7 +18,7 @@ $db = new DB_Community_Functions();
         $posts = $db->getPostByTopic($topic);
         if ($posts) {
             $response["error"] = FALSE;
-            foreach ($posts as $post) {//code might not work due to json formatting of multiple objects
+            foreach ($posts as $post) {
 
                 // posts found successfully
                 $response["post"]["post_id"] = $post["post_id"];
