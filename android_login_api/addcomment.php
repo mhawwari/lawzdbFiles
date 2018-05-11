@@ -12,12 +12,12 @@ $db = new DB_Community_Functions();
 // json response array
 $response = array("error" => FALSE);
 
-if (isset($_POST['content']) && isset($_POST['post_id']) && isset($_POST['user_id'])) {
+if (isset($_GET['content']) && isset($_GET['post_id']) && isset($_GET['user_id'])) {
 
     // receiving the post params
-    $content = $_POST["content"];
-    $post_id = $_POST['post_id'];
-    $user_id = $_POST['user_id'];
+    $content = $_GET["content"];
+    $post_id = $_GET['post_id'];
+    $user_id = $_GET['user_id'];
 
     // create a new comment
     if ($db->addComment( $content,$user_id, $post_id ))
