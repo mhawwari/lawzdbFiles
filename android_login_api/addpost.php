@@ -19,7 +19,6 @@ if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id'
     $content = $_POST['content'];
     $user_id = $_POST['user_id'];
     $topic = $_POST["topic"];
-    $image;
 
         // create a new post
         if ($db->addPost($title, $content, $user_id, $topic, $image))
