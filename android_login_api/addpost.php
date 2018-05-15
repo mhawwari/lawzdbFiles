@@ -12,7 +12,7 @@ $db = new DB_Community_Functions();
 // json response array
 $response = array("error" => FALSE);
 
-if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['username']) && isset($_POST['topic'])) {
+if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id']) && isset($_POST['topic'])) {
 
     // receiving the post params
     $title = $_POST["title"];
