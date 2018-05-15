@@ -21,7 +21,7 @@ if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id'
     $topic = $_POST["topic"];
 
         // create a new post
-        if ($db->addPost($title, $content, $user_id, $topic))
+        if ($db->addPost($title, $content, $user_id, $topic, $image))
         {
             // post stored successfully
             $response["error"] = FALSE;
