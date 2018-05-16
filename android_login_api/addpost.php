@@ -11,7 +11,7 @@ $db = new DB_Community_Functions();
 
 // json response array
 $response = array("error" => FALSE);
-define('UPLOAD_PATH', 'http:\/\/lawscloud.gearhostpreview.com\/img\/');
+define('UPLOAD_PATH', "http://lawscloud.gearhostpreview.com/img/");
 
 if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id']) && isset($_POST['topic'])) {
 
