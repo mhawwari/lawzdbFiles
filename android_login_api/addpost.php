@@ -10,16 +10,10 @@ require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 //connect to cloud server
 $ftp_server = "ftp.gear.host";
-$ftp_username = 'lawscloud\$lawscloud'
-$ftp_userpass = "fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4"
+$ftp_username = 'lawscloud\$lawscloud';
+$ftp_userpass = "fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
-if(!$login)
-{
-    $response['error'] = true;
-            $response['message'] = 'login success';
-            echo json_encode($response);
-}
 $destination_path = "site/repository/img/"; 
 
 // json response array
