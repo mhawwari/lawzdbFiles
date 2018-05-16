@@ -24,7 +24,7 @@ if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id'
     if (isset($_FILES['pic']['name'])) {
         try
         {
-            move_uploaded_file($_FILES['pic']['tmp_name'], UPLOAD_PATH . $_FILES['pic']['name']);
+            move_uploaded_file($_FILES['pic']['name'], UPLOAD_PATH . $_FILES['pic']['name']);
             $image = UPLOAD_PATH.$_FILES['pic']['name'];
         }
         catch (Exception $e){
