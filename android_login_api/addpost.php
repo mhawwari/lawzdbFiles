@@ -16,10 +16,10 @@ $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
 $destination_path = "site/repository/img/"; 
 
-if (!$login || !$ftp_connect)
+if ($login || $ftp_connect)
 {
     $response['error'] = true;
-            $response['message'] = 'Could not';
+            $response['message'] = 'Could ';
             echo json_encode($response);
 }
 // json response array
