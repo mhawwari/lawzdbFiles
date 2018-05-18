@@ -14,13 +14,13 @@ $owner_id = $_POST['owner_id'];
 // json response array
 $jOffers = array();
 
-// get all posts
+// get all offers
 $offers = $db->getOffersByOwner($owner_id);
 if ($offers) {
     $response["error"] = FALSE;
     foreach ($offers as $offer) {
 
-        // posts found successfully
+        // offers found successfully
         $response["offer"]["offer_id"] = $offer["offer_id"];
         $response["offer"]["title"] = $offer["title"];
         $response["offer"]["description"] = $offer["description"];
