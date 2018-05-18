@@ -14,6 +14,7 @@ $ftp_userpass = "fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
 $destination_path = "site/repository/img/";
+
 // json response array
 $response = array("error" => FALSE);
 define('UPLOAD_PATH', "http://lawscloud.gearhostpreview.com/img/");
@@ -33,8 +34,6 @@ if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id'
         }
         catch (Exception $e){
             $response['error'] = true;
-            $response['message'] = 'Could not upload file';
-            echo json_encode($response);
         }
     }
     // create a new post
