@@ -6,11 +6,10 @@
  * Time: 2:23 PM
  */
 
-
 require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
 
-// receiving the post params
+// receiving the comment params
 $post_id = $_POST['post_id'];
 // json response array
 $jcomments = array();
@@ -35,7 +34,7 @@ if ($comments) {
     }
     echo json_encode($jcomments);
 } else {
-    // no posts exist
+    // no comments exist
     $response["error"] = TRUE;
     $response["error_msg"] = "no comments exist";
     echo json_encode($response);

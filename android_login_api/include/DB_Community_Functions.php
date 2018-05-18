@@ -32,19 +32,6 @@ class DB_Community_Functions {
      * @param $image
      * @return bool
      */
-    /*public function addPost($title, $content, $user_id, $topic) {
-        $stmt = $this->conn->prepare("INSERT INTO post(title, content, user_id, topic, create_date) VALUES(?, ?, ?, ?, NOW())");
-        $stmt->bind_param("sssss", $title, $content, $user_id, $topic);
-        $result = $stmt->execute();
-        $stmt->close();
-
-        // check for successful store
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
-    }*/
 	public function addPost($title, $content, $user_id, $topic, $image) {
         $stmt = $this->conn->prepare("INSERT INTO post(title, content, user_id, topic, image, create_date) VALUES(?, ?, ?, ?, ?, NOW())");
         $stmt->bind_param("sssss", $title, $content, $user_id, $topic, $image);

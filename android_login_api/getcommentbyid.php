@@ -15,7 +15,7 @@ $response = array("error" => FALSE);
     // receiving the post params
     $id = $_POST['comment_id'];
 
-        // get post
+        // get comment
         $comment = $db->getCommentById($id);
         if ($comment){
             // comment found successfully
@@ -25,11 +25,14 @@ $response = array("error" => FALSE);
             $response["comment"]["post_id"] = $comment["post_id"];
             $response["comment"]["create_date"] = $comment["create_date"];
             $response["comment"]["modify_date"] = $comment["modify_date"];
+            $response["comment"]["first_name"] = $comment["first_name"];
+            $response["comment"]["last_name"] = $comment["last_name"];
+            $response["comment"]["image"] = $comment["image"];
             echo json_encode($response);
         } else {
-            // post not found
+            // comment not found
             $response["error"] = TRUE;
-            $response["error_msg"] = "post not found";
+            $response["error_msg"] = "comment not found";
             echo json_encode($response);
         }
 
