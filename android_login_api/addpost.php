@@ -34,6 +34,8 @@ if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['user_id'
         }
         catch (Exception $e){
             $response['error'] = true;
+            $response['message'] = 'Could not upload file';
+            echo json_encode($response);
         }
     }
     // create a new post
