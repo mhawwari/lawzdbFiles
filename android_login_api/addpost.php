@@ -13,7 +13,7 @@ $ftp_username = 'lawscloud\$lawscloud';
 $ftp_userpass = "fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
-$destination_path = "site/repository/img/";
+$destination_path = "/site/wwwroot/img/";
 
 // json response array
 $response = array("error" => FALSE);
