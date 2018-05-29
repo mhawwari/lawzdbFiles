@@ -93,7 +93,7 @@ class DB_Community_Functions {
      */
     public function getPosts() {
         $posts = array();
-        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id");
+        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id ORDER BY create_date DESC");
 
         if ($stmt->execute()) {
 		$result = $stmt->get_result();
@@ -134,7 +134,7 @@ class DB_Community_Functions {
      */
     public function getPostByTopic($topic) {
         $posts = array();
-        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id WHERE topic = ?");
+        $stmt = $this->conn->prepare("SELECT post.*, user.first_name, user.last_name FROM post INNER JOIN user ON post.user_id = user.user_id WHERE topic = ? ORDER BY create_date DESC");
         $stmt->bind_param("s", $topic);
 
         if ($stmt->execute()) {
@@ -259,7 +259,7 @@ class DB_Community_Functions {
      */
     public function getCommentByPost($post_id) {
         $comments = array();
-        $stmt = $this->conn->prepare("SELECT comment.*, user.first_name, user.last_name, user.image FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE post_id = ?");
+        $stmt = $this->conn->prepare("SELECT comment.*, user.first_name, user.last_name, user.image FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE post_id = ? ORDER BY create_date DESC");
         $stmt->bind_param("s", $post_id);
 
         if ($stmt->execute()) {
