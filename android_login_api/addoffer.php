@@ -10,8 +10,8 @@ require_once 'include/DB_Offer_Functions.php';
 $db = new DB_Offer_Functions();
 //connect to cloud server
 $ftp_server = "ftp.gear.host";
-$ftp_username = 'lawscloud\$lawscloud';
-$ftp_password = "fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4";
+$ftp_username = 'lawzcloud\$lawzcloud';
+$ftp_password = " fio9bNvaDhtW7BHl92PXo6rRdXGfPmcag1xr4c24kWoPdjKyk8EMyeCjPiL4";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_password);
 $destination_path = "/site/wwwroot/img/";
