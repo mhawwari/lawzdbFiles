@@ -3,7 +3,7 @@
  * Add a post with title, content, topic, user_id.
  * User: Toshiba
  * Date: 4/6/2018
- * Time: 10:29 PM
+ * Time: 10:30 PM
  */
 require_once 'include/DB_Community_Functions.php';
 $db = new DB_Community_Functions();
